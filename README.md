@@ -1,1 +1,1 @@
-# easthetic_gallery
+# aesthetic_gallery
