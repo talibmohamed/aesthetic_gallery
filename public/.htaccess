@@ -1,6 +1,30 @@
+# Enable URL rewriting
 RewriteEngine On
-RewriteBase /public/
-RewriteRule ^index\\.php$ - [L]
+
+# Exclude existing files and directories from being rewritten
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /public/index.php [L]
+
+# Rewrite all other requests to index.php
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+
+
+
+# Protect sensitive files
+<FilesMatch "(\.env|\.htaccess|config\.php)">
+    Require all denied
+</FilesMatch>
+
+# Enable caching for performance
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# Enable compression for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+</IfModule>

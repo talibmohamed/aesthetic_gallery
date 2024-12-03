@@ -4,23 +4,31 @@ class Router {
     public static function handle($url) {
         // Define routes and their callbacks
         $routes = [
-            'home' => function() {
+            '/' => function() {
                 include 'controller/home.php';
             },
             'about' => function() {
                 include 'controller/about.php';
+            },
+            'products' => function() {
+                include 'controller/products.php';
+            },
+            'product' => function() {
+                include 'controller/productController.php';
             }
         ];
 
-        //! Handle dynamic route (e.g., /user/12) to do
-
-
+        // // Handle dynamic route (e.g., /product/12)
+        // if (preg_match('#^product/(\d+)$#', $url, $matches)) {
+        //     $_GET['id'] = $matches[1]; // Pass product ID to controller
+        //     include 'controller/productController.php';
+        //     return;
+        // }
 
         // Check if the route exists
         if (array_key_exists($url, $routes)) {
             $routes[$url]();
         } else {
-            // Show 404 page for unknown routes
             include 'view/404.html';
         }
     }

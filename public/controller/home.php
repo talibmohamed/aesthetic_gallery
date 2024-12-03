@@ -1,2 +1,3 @@
-<!-- include home.php -->
-<?php include '../view/home.view.php'; ?>
+<?php
+$title = "Home"; 
+include __DIR__ . '/../view/home.view.php';
