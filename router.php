@@ -8,6 +8,10 @@ class Router {
                 // include css
                 include 'controller/home.php';
             },
+            // sign in
+            'sign-in' => function() {
+                include 'controller/sign-in.php';
+            },
             'about' => function() {
                 include 'controller/about.php';
             },

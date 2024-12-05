@@ -3,15 +3,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inspiration&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/public/view/css/header.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <header>
     <div class="header-container">
-        <!-- <div class="header-logo"> i fount it better to not use the logo 
-            <a href="#"><img src="/public/view/images/logo.svg" alt="Website Logo"></a>
-        </div> -->
         <nav class="left-nav">
             <div class="left-upper">
-                <div class="web-site-name">
-                    <a href="#">Aesthetic Gallery</a>
+                <div class="top-phone">
+                    <div class="hamburger-icon" id="burger">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </div>
+                    <div class="web-site-name" id="name">
+                        <a href="#">Aesthetic Gallery</a>
+                    </div>
                 </div>
                 <div class="search">
                     <input type="text" class="searchTerm" placeholder="Find something you'll love!">
