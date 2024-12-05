@@ -5,6 +5,7 @@ class Router {
         // Define routes and their callbacks
         $routes = [
             '/' => function() {
+                // include css
                 include 'controller/home.php';
             },
             'about' => function() {

@@ -1,10 +1,14 @@
 <?php
-// Autoload classes (optional, if you use a class-based structure)
+// Include the router
 require_once '../router.php';
 
-// Get the requested URL from the query string
+// Get the requested URL
 $url = isset($_GET['url']) ? rtrim($_GET['url'], '/') : '/';
 
-// Pass the URL to the router
+// Check if the request is for a static file and serve it directly
+if (preg_match('/\.(?:png|jpg|jpeg|gif|css|js|svg)$/', $url)) {
+    return false; // This lets the webserver handle static files
+}
+
+// Handle dynamic routes
 Router::handle($url);
-?>

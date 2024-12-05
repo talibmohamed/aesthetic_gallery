@@ -1,9 +1,18 @@
 # Enable URL rewriting
 RewriteEngine On
 
-# Exclude existing files and directories from being rewritten
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+
+# Exclude existing files (static files) from being rewritten
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Exclude existing directories
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Rewrite all other requests to index.php
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+
 
 # Rewrite all other requests to index.php
 RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
