@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Set the base path of the project
+RewriteBase /aesthetic_gallery/
+
+# Redirect all requests to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]
