@@ -1,3 +1,3 @@
 <?php
 $title = "About Us"; 
-include __DIR__ . '/../view/about.view.php';
+require_once 'view/about.view.php';

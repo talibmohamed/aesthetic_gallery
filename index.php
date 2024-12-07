@@ -11,6 +11,8 @@ $routes = [
     '/about' => 'controller/about.php',
     '/contact' => 'controller/contact.php',
     '/signup' => 'controller/signup.php',
+    //admin
+    '/admin' => 'controller/admin/admin.php',
 ];
 
 // Route the request
@@ -19,7 +21,7 @@ function routetocontroller($uri, $routes)
     if (array_key_exists($uri, $routes)) {
         return $routes[$uri];
     } else {
-        return '404.php'; // Return the 404 page path
+        return 'view/404.php';
     }
 }
 

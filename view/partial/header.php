@@ -31,11 +31,11 @@
             </div>
             <div class="left-lower">
                 <ul class="nav-horizontal">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="#">Artists</a></li>
                     <li><a href="#">Artworks</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#">Team</a></li>
+                    <li><a href="about">About</a></li>
                 </ul>
             </div>
         </nav>
