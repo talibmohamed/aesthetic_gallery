@@ -11,7 +11,7 @@ $routes = [
     '/about' => 'controller/about.php',
     '/contact' => 'controller/contact.php',
     '/signup' => 'controller/signup.php',
-    '/login' => 'controller'
+    '/login' => 'controller/login.php',
     //admin
     '/admin' => 'controller/admin/admin.php',
 ];
