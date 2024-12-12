@@ -24,7 +24,14 @@
         h2 {
             text-align: center;
         }
-        input[type="text"], input[type="email"], input[type="password"] {
+        input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        select {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -48,21 +55,52 @@
             font-style: italic;
             font-family: "Georgia", serif; /* Exemple d'une autre police */
         }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
 
     <div class="signup-form">
         <h2>Sign Up</h2>
-        <form method="POST">
-            <label for="name">Nom complet</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
+        <form method="POST" id="signupForm">
+
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+
+            <label for="pseudo">Pseudo</label>
+            <input type="text" id="pseudo" name="pseudo" placeholder="Votre pseudo" required>
+
+            <label for="date_naissance">Date de naissance</label>
+            <input type="date" id="date_naissance" name="date_naissance" required>
+
+            <label for="tel">Téléphone</label>
+            <input type="text" id="tel" name="tel" placeholder="Votre numéro de téléphone" pattern="\\d{10}" required>
 
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Votre email" required>
 
             <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password" placeholder="Créer un mot de passe" required>
+            <input type="password" id="password" name="password" placeholder="Créer un mot de passe" minlength="8" required>
+
+            <label for="user_type">Type d'utilisateur</label>
+            <select id="user_type" name="user_type" required>
+                <option value="">-- Sélectionnez un type --</option> <!-- artiste or buyer -->
+                <option value="artiste">Artiste</option>
+                <option value="buyer">Acheteur</option>
+            </select>
+
+            <label for="consent">
+                <input type="checkbox" id="consent" name="consent" required> J'accepte les termes et conditions
+            </label>
+
+            <span id="formErrors" class="error"></span>
 
             <button type="submit">S'inscrire</button>
         </form>
@@ -71,27 +109,37 @@
             <p><a href="#">Forget your password</a></p>
             <p>Don't have an account? <a href="#">Sign up</a></p>
             <p>Are you a current aesthetic gallery artist? <a href="#">Log in here</a></p>
-                <img id="password-icon" src="eye-icon.png" alt="Voir" />
-                <span id="password-text">Hide</span>
         </div>
     </div>
     <script>
-        // Fonction pour afficher ou masquer le mot de passe
-        function togglePasswordVisibility() {
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            let errors = [];
+            const telInput = document.getElementById('tel');
             const passwordInput = document.getElementById('password');
-            const passwordIcon = document.getElementById('password-icon');
-            const passwordText = document.getElementById('password-text');
-            
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text'; // Affiche le mot de passe
-                passwordIcon.src = 'eye-closed-icon.png'; // Change l'icône
-                passwordText.textContent = 'Hide'; // Change le texte en "Hide"
-            } else {
-                passwordInput.type = 'password'; // Cache le mot de passe
-                passwordIcon.src = 'eye-icon.png'; // Change l'icône
-                passwordText.textContent = 'Show'; // Change le texte en "Show"
+            const formErrors = document.getElementById('formErrors');
+
+            // Clear previous errors
+            formErrors.textContent = '';
+
+            // Validate phone number
+            if (!/\\d{10}/.test(telInput.value)) {
+                errors.push('Le numéro de téléphone doit contenir exactement 10 chiffres.');
             }
-        }
+
+            // Validate password length
+            if (passwordInput.value.length < 8) {
+                errors.push('Le mot de passe doit comporter au moins 8 caractères.');
+            }
+
+            // Display errors or submit the form
+            if (errors.length > 0) {
+                formErrors.textContent = errors.join(' ');
+            } else {
+                this.submit();
+            }
+        });
     </script>
 
 </body>
