@@ -1,40 +1,48 @@
 <?php
-$title = "sign up";
+$title = "Sign Up";
 
 // Include necessary files for database and user controller
 require_once 'model/db.php';
-require_once 'model/user.php'; 
+require_once 'model/user.php';
 
 // Create a new instance of the Database class to establish a connection
 $database = new Database();
-$db = $database->getConnection(); 
+$db = $database->getConnection();
 
 // Initialize error messages and input values
 $errors = [];
-$name = $email = $password = $nom = $prenom = $pseudo = $date_naissance = $consent = $tel = $user_type = "";
+$user_type = $nom = $prenom = $pseudo = $email = $password = $date_naissance = $consent = $tel = $login_token = "";
 
+// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect and sanitize form data
-    $name = htmlspecialchars(trim($_POST['name']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $password = htmlspecialchars(trim($_POST['password']));
     $nom = htmlspecialchars(trim($_POST['nom']));
     $prenom = htmlspecialchars(trim($_POST['prenom']));
     $pseudo = htmlspecialchars(trim($_POST['pseudo']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $password = htmlspecialchars(trim($_POST['password']));
     $date_naissance = htmlspecialchars(trim($_POST['date_naissance']));
-    $consent = isset($_POST['consent']) ? 1 : 0; // consent is a checkbox that retun true or false
+    $consent = isset($_POST['consent']) ? 1 : 0; // consent is a checkbox that returns true or false
     $tel = htmlspecialchars(trim($_POST['tel']));
     $user_type = htmlspecialchars(trim($_POST['user_type']));
 
-    // test if the email is already registered
+    // Test if the email is already registered
     $user = new User($db);
     if ($user->emailExists($email)) {
         $errors[] = "Email is already registered.";
     }
 
     // Validate inputs
-    if (empty($name)) {
-        $errors[] = "Name is required.";
+    if (empty($nom)) {
+        $errors[] = "First Name is required.";
+    }
+
+    if (empty($prenom)) {
+        $errors[] = "Last Name is required.";
+    }
+
+    if (empty($pseudo)) {
+        $errors[] = "Username is required.";
     }
 
     if (empty($email)) {
@@ -51,22 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Password must include at least one uppercase letter, one lowercase letter, and one number.";
     }
 
-    if (empty($nom)) {
-        $errors[] = "Nom is required.";
-    }
-
-    if (empty($prenom)) {
-        $errors[] = "Prenom is required.";
-    }
-
-    if (empty($pseudo)) {
-        $errors[] = "Pseudo is required.";
-    }
-
     if (empty($date_naissance)) {
-        $errors[] = "Date de naissance is required.";
+        $errors[] = "Birthdate is required.";
     } elseif (!strtotime($date_naissance)) {
-        $errors[] = "Invalid date format for Date de naissance.";
+        $errors[] = "Invalid date format for Birthdate.";
     }
 
     if (empty($tel)) {
@@ -89,31 +85,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Prepare the user data
         $data = [
-            'name' => $name,
-            'email' => $email,
-            'password' => $hashedPassword,
+            'user_type' => $user_type,
             'nom' => $nom,
             'prenom' => $prenom,
             'pseudo' => $pseudo,
+            'email' => $email,
+            'password' => $hashedPassword,
             'date_naissance' => $date_naissance,
             'consent' => $consent,
             'tel' => $tel,
-            'user_type' => $user_type,
-            'login_token' => $login_token
+            'login_token' => $login_token,
         ];
 
-
-
         // Register the user
-        $user->register($data);
+        $result = $user->register($data);
 
-
-        if ($result === 'User registered successfully') {
-            // Registration successful, display a success message
+        if ($result) {
             echo "<p style='color: green;'>Registration successful!</p>";
         } else {
-            // Registration failed, display the error message from the UserController
-            $errors[] = $result;
+            $errors[] = 'Registration failed. Please try again.';
         }
     }
 }
