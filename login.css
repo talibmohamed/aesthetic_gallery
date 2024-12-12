@@ -1,0 +1,40 @@
+/* Styles globaux */
+body {
+    background-color: #fefaf7;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #5f4637;
+    padding: 20px;
+}
+
+/* Style du formulaire */
+form {
+    margin: 0 auto;
+    max-width: 300px;
+    text-align: left;
+}
+
+/* Champs de texte */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Bouton */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e0ddd8;
+    border: none;
+    border-radius: 5px;
+    color: #5f4637;
+}
+
+/* Liens */
+a {
+    color: #5f4637;
+    text-decoration: none;
+}
