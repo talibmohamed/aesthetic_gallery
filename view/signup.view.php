@@ -54,7 +54,7 @@
 
     <div class="signup-form">
         <h2>Sign Up</h2>
-        <form action="/submit_signup" method="POST">
+        <form method="POST">
             <label for="name">Nom complet</label>
             <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
 
