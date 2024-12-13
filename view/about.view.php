@@ -7,6 +7,8 @@
 </head>
 <body>
     <h1>About Us</h1>
-    <p>This is the about page.</p>
+    <p>This is the about page. jsdhf</p>
 </body>
 </html>
+
+<?php require_once 'partial/footer.php'; ?>
