@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/aesthetic_gallery/view/css/signup.css">
 </head>
 
 <body>
     <div class="form-container">
-        <h2 class="form-title">Sign Up</h2>
+        <h2 class="form-title">Sign Up hgshsg</h2>
         <form method="POST" class="signup-form">
             <label for="nom" class="form-label">First Name</label>
             <input type="text" id="nom" name="nom" class="form-input" placeholder="Your first name" required>
