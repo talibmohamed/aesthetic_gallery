@@ -10,51 +10,66 @@
 </head>
 
 <body>
-    <div class="form-container">
-        <h2 class="form-title">Sign Up hgshsg</h2>
-        <form method="POST" class="signup-form">
-            <label for="pseudo" class="form-label form-label-italic">Username</label>
-            <input type="text" id="pseudo" name="pseudo" class="form-input" placeholder="Your username" required>
+    <?php require_once 'partial/header.php'; ?>
+    <div class="main-container">
+        <div class="form-container">
+            <h2 class="form-title">Create customer account</h2>
+            <form method="POST" class="signup-form">
+                <label for="pseudo" class="form-label">Username</label>
+                <input type="text" id="pseudo" name="pseudo" class="form-input" placeholder="Your username" required>
 
-            <label for="date_naissance" class="form-label form-label-italic">Birthdate</label>
-            <input type="date" id="date_naissance" name="date_naissance" class="form-input" required>
+                <label for="nom" class="form-label">First Name</label>
+                <input type="text" id="nom" name="nom" class="form-input" placeholder="Your first name" required>
 
-            <label for="tel" class="form-label form-label-italic">Phone</label>
-            <input type="text" id="tel" name="tel" class="form-input" placeholder="Your phone number" required>
+                <label for="prenom" class="form-label">Last Name</label>
+                <input type="text" id="prenom" name="prenom" class="form-input" placeholder="Your last name" required>
 
-            <label for="email" class="form-label form-label-italic">Email</label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="Your email" required>
 
-            <label for="password" class="form-label form-label-italic">Password</label>
-            <input type="password" id="password" name="password" class="form-input" placeholder="Create a password" minlength="8" required>
+                <label for="date_naissance" class="form-label">Birthdate</label>
+                <input type="date" id="date_naissance" name="date_naissance" class="form-input" required>
 
-            <label for="user_type" class="form-label form-label-italic">User Type</label>
-            <select id="user_type" name="user_type" class="form-select" required>
-                <option value="">-- Select a user type --</option>
-                <option value="artist">Artist</option>
-                <option value="buyer">Buyer</option>
-            </select>
+                <label for="tel" class="form-label">Phone</label>
+                <input type="text" id="tel" name="tel" class="form-input" placeholder="Your phone number" required>
 
-            <label for="consent" class="form-consent">
-                <input type="checkbox" id="consent" name="consent" required> I accept the terms and conditions
-            </label>
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Your email" required>
 
-            <span id="formErrors" class="form-error"></span>
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-input" placeholder="Create a password" minlength="8" required>
 
-            <button type="submit" class="form-button">Sign Up</button>
-        </form>
-        
-        <div class="additional-links">
-            <p><a href="#" class="link">Forgot your password?</a></p>
-            <p>Don't have an account? <a href="#" class="link">Sign up</a></p>
-            <p>Are you an artist at the current gallery? <a href="#" class="link">Log in here</a></p>
-        </div>
+                <label for="user_type" class="form-label">User Type</label>
+                <div class="form-check form-radio">
+                    <input type="radio" id="artist" name="user_type" value="artist" class="form-check-input" required>
+                    <label for="artist" class="form-check-label">Artist</label>
+                </div>
+                <div class="form-check form-radio">
+                    <input type="radio" id="buyer" name="user_type" value="buyer" class="form-check-input" required>
+                    <label for="buyer" class="form-check-label">Buyer</label>
+                </div>
 
-        <div class="captcha-container">
-            <div class="captcha-box">I'm not a robot</div>
-            <span class="captcha-logo">reCAPTCHA</span>
+                <label for="consent" class="form-consent">
+                    <input type="checkbox" id="consent" required> I agree to the <a href="#" class="link"> Terms of Service</a> and <a href="#" class="link"> Privacy Policy</a>
+                </label>
+
+                <!-- adventizing with data -->
+                <div class="form-advertising">
+                    <input type="checkbox" id="advertising" name="consent" checked> I want to receive exclusive offers and promotions from Aesthetic Gallery
+                </div>
+
+                <span id="formErrors" class="form-error"></span>
+
+                <button type="submit" class="form-button">Sign Up</button>
+            </form>
+
+            <div class="additional-links">
+                <p><a href="#" class="link">Forgot your password?</a></p>
+                <p>already have an account? <a href="login.php" class="link">Log in</a></p>
+            </div>
+
         </div>
     </div>
+
+    <?php require_once 'partial/footer.php'; ?>
 </body>
 
 </html>
