@@ -105,10 +105,7 @@ body {
     margin: 10px 0;
 }
 
-.form-error {
-    color: red;
-    font-size: 0.9em;
-}
+
 
 .additional-links {
     text-align: center;
@@ -119,4 +116,12 @@ body {
     text-decoration: none;
     color: #5C6BC0;
     font-size: 0.9em;
+}
+
+
+.form-error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
 }

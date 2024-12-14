@@ -10,12 +10,11 @@ $database = new Database();
 $db = $database->getConnection();
 
 // Initialize error messages and input values
+// Initialize error messages for specific fields
 $errors = [];
-$user_type = $nom = $prenom = $pseudo = $email = $password = $date_naissance = $consent = $tel = $login_token = "";
 
-// Check if the form is submitted
+// Collect and sanitize form data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect and sanitize form data
     $nom = htmlspecialchars(trim($_POST['nom']));
     $prenom = htmlspecialchars(trim($_POST['prenom']));
     $pseudo = htmlspecialchars(trim($_POST['pseudo']));
@@ -29,50 +28,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Test if the email is already registered
     $user = new User($db);
     if ($user->emailExists($email)) {
-        $errors[] = "Email is already registered.";
+        $errors['email'] = "Email is already registered.";
     }
 
     // Validate inputs
     if (empty($nom)) {
-        $errors[] = "First Name is required.";
+        $errors['nom'] = "First Name is required.";
     }
 
     if (empty($prenom)) {
-        $errors[] = "Last Name is required.";
+        $errors['prenom'] = "Last Name is required.";
     }
 
     if (empty($pseudo)) {
-        $errors[] = "Username is required.";
+        $errors['pseudo'] = "Username is required.";
     }
 
     if (empty($email)) {
-        $errors[] = "Email is required.";
+        $errors['email'] = "Email is required.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Invalid email format.";
+        $errors['email'] = "Invalid email format.";
     }
 
     if (empty($password)) {
-        $errors[] = "Password is required.";
+        $errors['password'] = "Password is required.";
     } elseif (strlen($password) < 8) {
-        $errors[] = "Password must be at least 8 characters long.";
+        $errors['password'] = "Password must be at least 8 characters long.";
     } elseif (!preg_match('/[A-Z]/', $password) || !preg_match('/[a-z]/', $password) || !preg_match('/[0-9]/', $password)) {
-        $errors[] = "Password must include at least one uppercase letter, one lowercase letter, and one number.";
+        $errors['password'] = "Password must include at least one uppercase letter, one lowercase letter, and one number.";
     }
 
     if (empty($date_naissance)) {
-        $errors[] = "Birthdate is required.";
+        $errors['date_naissance'] = "Birthdate is required.";
     } elseif (!strtotime($date_naissance)) {
-        $errors[] = "Invalid date format for Birthdate.";
+        $errors['date_naissance'] = "Invalid date format for Birthdate.";
     }
 
     if (empty($tel)) {
-        $errors[] = "Telephone is required.";
+        $errors['tel'] = "Telephone is required.";
     } elseif (!preg_match('/^\d{10,15}$/', $tel)) {
-        $errors[] = "Telephone must be 10 to 15 digits.";
+        $errors['tel'] = "Telephone must be 10 to 15 digits.";
     }
 
     if (empty($user_type)) {
-        $errors[] = "User type is required.";
+        $errors['user_type'] = "User type is required.";
     }
 
     // If no errors, proceed to register the user
@@ -101,9 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $user->register($data);
 
         if ($result) {
-            echo "<p style='color: green;'>Registration successful!</p>";
+            $success = 'Registration successful. You can now <a href="login.php">log in</a>.';
         } else {
-            $errors[] = 'Registration failed. Please try again.';
+            $errors['general'] = 'Registration failed. Please try again.';
         }
     }
 }
