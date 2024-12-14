@@ -49,6 +49,37 @@
             <button type="submit" class="form-button">Sign Up</button>
         </form>
 
+
+        <form class="form-container">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-input" placeholder="Your username">
+
+            <label class="form-label">Birthdate</label>
+            <input type="date" class="form-input">
+
+            <label class="form-label">Phone</label>
+            <input type="tel" class="form-input" placeholder="Your phone number">
+
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" placeholder="Your email">
+
+            <label class="form-label">Password</label>
+            <input type="password" class="form-input" placeholder="Create a password">
+
+            <label class="form-label">User Type</label>
+            <select class="form-input">
+                <option>-- Select a user type --</option>
+                <option>User</option>
+                <option>Admin</option>
+            </select>
+
+            <div class="form-terms">
+                <input type="checkbox" id="terms" class="form-checkbox">
+                <label for="terms" class="form-label">I accept the terms and conditions</label>
+            </div>
+        </form>
+        
+
         <div class="additional-links">
             <p><a href="#" class="link">Forgot your password?</a></p>
             <p>Don't have an account? <a href="#" class="link">Sign up</a></p>

@@ -36,6 +36,32 @@ body {
     box-sizing: border-box;
 }
 
+
+input, select {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Dégradé de bleu-violet à bleu-vert */
+    color: white; /* Couleur du texte */
+    border: none; /* Enlever la bordure */
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    outline: none; /* Supprimer les bords au focus */
+    margin-bottom: 10px; /* Espacement entre les champs */
+    font-size: 14px; /* Taille de la police */
+    width: 100%; /* Pleine largeur */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Focus pour rendre les champs plus interactifs */
+input:focus, select:focus {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Inversion du dégradé */
+    box-shadow: 0 0 8px #2575fc; /* Effet lumineux au focus */
+}
+
+/* Style pour le placeholder */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Texte du placeholder en blanc transparent */
+}
+
+
 .form-button {
     width: 100%;
     padding: 10px;
