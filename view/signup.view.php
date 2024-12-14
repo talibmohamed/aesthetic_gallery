@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="/aesthetic_gallery/view/css/signup.css">
@@ -12,28 +13,22 @@
     <div class="form-container">
         <h2 class="form-title">Sign Up hgshsg</h2>
         <form method="POST" class="signup-form">
-            <label for="nom" class="form-label">First Name</label>
-            <input type="text" id="nom" name="nom" class="form-input" placeholder="Your first name" required>
-
-            <label for="prenom" class="form-label">Last Name</label>
-            <input type="text" id="prenom" name="prenom" class="form-input" placeholder="Your last name" required>
-
-            <label for="pseudo" class="form-label">Username</label>
+            <label for="pseudo" class="form-label form-label-italic">Username</label>
             <input type="text" id="pseudo" name="pseudo" class="form-input" placeholder="Your username" required>
 
-            <label for="date_naissance" class="form-label">Birthdate</label>
+            <label for="date_naissance" class="form-label form-label-italic">Birthdate</label>
             <input type="date" id="date_naissance" name="date_naissance" class="form-input" required>
 
-            <label for="tel" class="form-label">Phone</label>
+            <label for="tel" class="form-label form-label-italic">Phone</label>
             <input type="text" id="tel" name="tel" class="form-input" placeholder="Your phone number" required>
 
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label form-label-italic">Email</label>
             <input type="email" id="email" name="email" class="form-input" placeholder="Your email" required>
 
-            <label for="password" class="form-label">Password</label>
+            <label for="password" class="form-label form-label-italic">Password</label>
             <input type="password" id="password" name="password" class="form-input" placeholder="Create a password" minlength="8" required>
 
-            <label for="user_type" class="form-label">User Type</label>
+            <label for="user_type" class="form-label form-label-italic">User Type</label>
             <select id="user_type" name="user_type" class="form-select" required>
                 <option value="">-- Select a user type --</option>
                 <option value="artist">Artist</option>
