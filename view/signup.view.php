@@ -109,52 +109,58 @@
     <?php require_once 'partial/footer.php'; ?>
 
     <script>
-    let debounceTimer;
+        let debounceTimer;
 
-    function checkpseudoAvailability() {
-        const pseudo = document.getElementById('pseudo').value;
+        function checkpseudoAvailability() {
+            const pseudo = document.getElementById('pseudo').value;
 
-        if (pseudo) {
-            fetch('/aesthetic_gallery/controller/check_availability.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    pseudo: pseudo
-                })
-            })
-            .then(response => response.json()) // Parse the response as JSON
-            .then(data => {
+            // check if pseudo is not empty
+            if (pseudo.trim() === '') {
+                return;
+            }
 
-                const status = document.getElementById('availability-status');
+            if (pseudo) {
+                fetch('/aesthetic_gallery/controller/check_availability.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            pseudo: pseudo
+                        })
+                    })
+                    .then(response => response.json()) // Parse the response as JSON
+                    .then(data => {
 
-                if (data.available === true) {
-                    status.textContent = 'pseudo is available!';
-                    status.style.color = 'green';
-                } else if (data.available === false) {
-                    status.textContent = 'pseudo is already taken.';
-                    status.style.color = 'red';
-                } else {
-                    status.textContent = 'An error occurred. Please try again.';
-                    status.style.color = 'orange';
-                }
-            })
-            .catch(error => {
-                const status = document.getElementById('availability-status');
-                status.textContent = 'Network error. Please try again.';
-                status.style.color = 'red';
-            });
-        } else {
-            alert('Please enter a pseudo.');
+                        const status = document.getElementById('availability-status');
+
+                        if (data.available === true) {
+                            // with unicode 
+                            status.textContent = 'pseudo is available! \u2714;';
+                            status.style.color = 'green';
+                        } else if (data.available === false) {
+                            status.textContent = 'pseudo is already taken. \u2718;';
+                            status.style.color = 'red';
+                        } else {
+                            status.textContent = 'An error occurred. Please try again.';
+                            status.style.color = 'orange';
+                        }
+                    })
+                    .catch(error => {
+                        const status = document.getElementById('availability-status');
+                        status.textContent = 'Network error. Please try again.';
+                        status.style.color = 'red';
+                    });
+            } else {
+                alert('Please enter a pseudo.');
+            }
         }
-    }
 
-    document.getElementById('pseudo').addEventListener('input', function() {
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(checkpseudoAvailability, 500); // Debounce to prevent multiple requests
-    });
-</script>
+        document.getElementById('pseudo').addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(checkpseudoAvailability, 500); // Debounce to prevent multiple requests
+        });
+    </script>
 
 
 

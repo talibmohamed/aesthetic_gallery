@@ -7,7 +7,6 @@ $input = json_decode(file_get_contents('php://input'), true);
 
 // Check if the 'pseudo' field exists in the decoded JSON data
 if (!isset($input['pseudo']) || empty($input['pseudo'])) {
-    // If 'pseudo' is missing or empty, return an error response
     echo json_encode(['error' => 'pseudo is required.']);
     exit;
 }
@@ -23,12 +22,10 @@ $response = [
 ];
 
 try {
-    // Create a User object to interact with the database
     $user = new User($db);
 
     // Check the pseudo availability
     $availability = $user->checkpseudoAvailability($pseudo);
-
     // Set the response with the pseudo availability
     $response['available'] = $availability;
 } catch (Exception $e) {
@@ -37,7 +34,6 @@ try {
     exit;
 }
 
-// Log the response for debugging purposes
 
 // Return the response as JSON
 echo json_encode($response);
