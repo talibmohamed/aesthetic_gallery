@@ -37,18 +37,25 @@ body {
 }
 
 .form-button {
-    width: 100%;
-    padding: 10px;
-    background-color: grey;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
+    width: 150px; /* Largeur du bouton */
+    height: 150px; /* Hauteur égale à la largeur pour un cercle parfait */
+    border-radius: 50%; /* Rend le bouton circulaire */
+    background-color: grey; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Enlève les bordures */
+    cursor: pointer; /* Change le curseur au survol */
+    font-size: 1em; /* Taille du texte */
+    text-align: center; /* Centre le texte horizontalement */
+    display: flex; /* Utilisation de flex pour centrer le contenu */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    margin: 20px auto; /* Centre le bouton dans son conteneur */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour l'effet stylé */
+    transition: background-color 0.3s ease; /* Animation fluide pour hover */
 }
 
 .form-button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Couleur au survol */
 }
 
 .form-consent {
@@ -96,6 +103,7 @@ body {
     font-size: 12px;
     color: #6D6D6D;
 }
+
 .form-label-italic {
     font-style: italic; /* Met en italique */
     font-family: 'Great Vibes', cursive; /* Applique la police depuis Google Fonts */
