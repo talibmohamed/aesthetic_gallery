@@ -6,7 +6,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="body">
     <div class="login-container">
         <h1 class="login-title">Login</h1>
         <form class="login-form">
@@ -21,8 +21,17 @@
             </div>
 
             <div class="form-options">
-                <label>
-                    <input type="checkbox" class="checkbox"> Remember me
+                <label class="checkbox-label">
+                    <input type="checkbox" class="form-checkbox"> Remember me
                 </label>
-                <a href="#" clas
+                <a href="#" class="link">Forgot password?</a>
+            </div>
 
+            <button type="submit" class="login-button">Log in</button>
+        </form>
+        <p class="signup-text">
+            Don't have an account? <a href="#" class="link">Sign up</a>
+        </p>
+    </div>
+</body>
+</html>
