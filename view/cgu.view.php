@@ -13,7 +13,10 @@
 
     <div class="container">
         <header class="header">
-            <h1 class="title">Terms of Use</h1>
+            <section class="terms-of-use">
+                <h1 class="title">Terms of Use Agreement</h1>
+                <p class="term-condition">This Terms of Use Agreement sets forth the standards of use of the website at www.aesthetic_gallery.com (the “Site”) operated by aesthetic_gallery, LLC (“aesthetic_gallery” or “we” or “us”). By using the Site, you (“you” or the “Member”) agree to these terms and conditions. If you do not agree to the terms and conditions of this Agreement, you should immediately cease all usage of the Site. We reserve the right, at any time, to modify, alter, or update the terms and conditions of this agreement without prior notice. Modifications shall become effective immediately upon being posted at the Site. Your continued use of the Site after amendments are posted constitutes an acknowledgement and acceptance of the Agreement and its modifications. Except as provided in this paragraph, this Agreement may not be amended.</p>
+            </section>
         </header>
 
         <main class="main-content">
