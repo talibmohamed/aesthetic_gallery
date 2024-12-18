@@ -13,7 +13,8 @@ $routes = [
     '/signup' => 'controller/signup.php',
     '/login' => 'controller/login.php',
     //admin
-    '/admin' => 'controller/admin/admin.php',
+    '/dashboard' => 'controller/admin/admindashboard.php',
+    '/terms' => 'controller/cgu.php',
 ];
 
 // Route the request

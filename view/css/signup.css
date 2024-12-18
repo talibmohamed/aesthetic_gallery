@@ -1,74 +1,111 @@
+@font-face {
+    font-family: 'KoPub Batang';
+    src: url('/aesthetic_gallery/view/fonts/kopub-batang/KoPubBatang-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #bccfd3;
+    background-color: #FFF9F6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Ensures the header stays on top and the form is below it */
+    min-height: 100vh;
+}
+
+
+
+.main-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    align-items: flex-start; /* Align content to the top */
+    height: 100%; /* Take full height */
+    overflow-y: auto; /* Allow the page to scroll */
 }
 
 .form-container {
-    background-color: #cdbcd3;
+    background-color: #FFF9F6;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 500px;
+    border: 0;
+    margin-top: 20px; /* This adds spacing between the header and the form */
+    overflow: hidden; /* Prevent internal scrolling */
 }
 
 .form-title {
+    font-family: KoPub Batang, serif;
     text-align: center;
 }
 
 .form-label {
-    font-weight: bold;
+    font-family: Poppins, sans-serif;
+    font-size: 0.8em;
+    color: #666666;
     display: block;
     margin-top: 10px;
 }
 
 .form-input, 
 .form-select {
-    width: 100%;
-    padding: 10px;
+    width: 100%; /* Fixed width for inputs */
+    padding: 12px;
     margin: 10px 0;
+    background-color: #FFF9F6;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     box-sizing: border-box;
 }
 
-.form-button {
-    width: 150px; /* Largeur du bouton */
-    height: 150px; /* Hauteur égale à la largeur pour un cercle parfait */
-    border-radius: 50%; /* Rend le bouton circulaire */
-    background-color: grey; /* Couleur de fond */
-    color: white; /* Couleur du texte */
-    border: none; /* Enlève les bordures */
-    cursor: pointer; /* Change le curseur au survol */
-    font-size: 1em; /* Taille du texte */
-    text-align: center; /* Centre le texte horizontalement */
-    display: flex; /* Utilisation de flex pour centrer le contenu */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    margin: 20px auto; /* Centre le bouton dans son conteneur */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour l'effet stylé */
-    transition: background-color 0.3s ease; /* Animation fluide pour hover */
-}
 
-.form-button:hover {
-    background-color: #45a049; /* Couleur au survol */
-}
 
-.form-consent {
+.form-radio {
     display: flex;
     align-items: center;
-    font-size: 0.9em;
     margin: 10px 0;
 }
 
-.form-error {
-    color: red;
-    font-size: 0.9em;
+.form-check {
+    padding-top: 1px;
+    display: inline-block;
+    margin-right: 20px;
 }
+
+.form-check-input {
+    margin-right: 5px;
+}
+
+.form-check-label {
+    font-size: 1em;
+}
+
+.form-button {
+    font-family: Poppins, sans-serif;
+    padding: 15px;
+    background-color: #c3bfbd;
+    color: white;
+    width: 100%;
+    border-radius: 27px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.form-button:hover {
+    background-color: #423E31;
+    transition: background-color 0.5s;
+
+}
+
+.form-consent {
+    display: block;
+    align-items: center;
+    margin: 10px 0;
+}
+
+
 
 .additional-links {
     text-align: center;
@@ -76,35 +113,15 @@ body {
 }
 
 .link {
-    color: #0000EE;
-    text-decoration: underline;
+    text-decoration: none;
+    color: #5C6BC0;
     font-size: 0.9em;
 }
 
-.captcha-container {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin: 15px 0;
-}
 
-.captcha-box {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #DADADA;
-    border-radius: 6px;
-    font-size: 14px;
-    color: #6D6D6D;
-    background-color: #FAFAFA;
-    text-align: left;
+.form-error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
 }
-
-.captcha-logo {
-    font-size: 12px;
-    color: #6D6D6D;
-}
-
-.form-label-italic {
-    font-style: italic; /* Met en italique */
-    font-family: 'Great Vibes', cursive; /* Applique la police depuis Google Fonts */
-} 

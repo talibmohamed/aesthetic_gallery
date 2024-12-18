@@ -11,7 +11,6 @@ class User
     // Register a new user
     public function register($data)
     {
-
         // Prepare SQL query to insert user into the database
         $sql = "INSERT INTO user (user_type, nom, prenom, pseudo, email, password, date_naissance, consent, tel, login_token)
                 VALUES (:user_type, :nom, :prenom, :pseudo, :email, :password, :date_naissance, :consent, :tel, :login_token)";
@@ -22,7 +21,7 @@ class User
         $stmt->bindParam(':prenom', $data['prenom']);
         $stmt->bindParam(':pseudo', $data['pseudo']);
         $stmt->bindParam(':email', $data['email']);
-        $stmt->bindParam(':password', $data['password']); //verifuy Password is hashed before being stored in the database :)
+        $stmt->bindParam(':password', $data['password']); //verify Password is hashed before being stored in the database :)
         $stmt->bindParam(':date_naissance', $data['date_naissance']);
         $stmt->bindParam(':consent', $data['consent']);
         $stmt->bindParam(':tel', $data['tel']);
@@ -40,5 +39,30 @@ class User
         $stmt->execute();
 
         return $stmt->fetchColumn() > 0;
+    }
+
+    // Check if the pseudo is already taken
+    public function pseudoExists($pseudo)
+    {
+        if (empty($pseudo)) {
+            return false;
+        }
+
+        $sql = "SELECT COUNT(*) FROM user WHERE pseudo = :pseudo";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':pseudo', $pseudo);
+        $stmt->execute();
+
+        $count = $stmt->fetchColumn();
+        return $count > 0;
+    }
+
+
+    // Check availability of the pseudo
+    public function checkpseudoAvailability($pseudo)
+    {
+        // Return true if pseudo is available (not exists)
+        $availability = !$this->pseudoExists($pseudo);
+        return $availability;
     }
 }

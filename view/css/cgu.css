@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF9F6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+
+
+.title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.main-content {
+    margin-top: 20px;
+}
+
+.terms-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Term section styling */
+.term {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.term:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.term-title {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.term-condition {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.no-terms-message {
+    font-size: 1.2rem;
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1rem;
+    color: #888;
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .term-title {
+        font-size: 1.5rem;
+    }
+
+    .term-condition {
+        font-size: 1rem;
+    }
+}
