@@ -1,69 +1,110 @@
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
     margin: 0;
     padding: 0;
 }
 
 footer {
     background-color: #d3c6bc;
-    padding: 20px 40px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: #fff;
+    
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left {
+    flex: 1;
+    max-width: 300px;
 }
 
 .footer-left img {
-    width: 100px;
+    width: 120px;
+    margin-bottom: 15px;
 }
 
 .footer-left p {
     max-width: 250px;
     margin-top: 10px;
+    font-size: 14px;
 }
 
 .footer-right {
     display: flex;
-    gap: 50px;
+    gap: 30px;
+    flex: 2;
+    justify-content: space-between;
 }
 
 .footer-column h3 {
+    font-size: 18px;
     margin-bottom: 10px;
-    color: white;
+    color: #fff;
+    font-weight: bold;
 }
 
 .footer-column ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-column ul li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .footer-column ul li a {
     text-decoration: none;
-    color: white;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #ff9f00;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .footer-social a img {
-    width: 25px;
-    margin-right: 10px;
+    width: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.1);
 }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 20px;
-    font-size: 12px;
-    border-top: 1px solid #000;
-    padding-top: 10px;
+    margin-top: 40px;
+    font-size: 14px;
+    border-top: 1px solid #fff;
+    padding-top: 15px;
 }
 
 .footer-bottom .back-to-top {
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 10px;
     text-decoration: none;
-    color: white;
+    color: #fff;
+    font-size: 16px;
+}
+
+.footer-bottom .back-to-top:hover {
+    color: #ff9f00;
 }
