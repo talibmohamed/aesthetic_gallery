@@ -72,7 +72,7 @@
                 <?php endif; ?>
 
                 <label for="consent" class="form-consent">
-                    <input type="checkbox" id="consent" required> I agree to the <a href="#" class="link"> Terms of Service</a> and <a href="#" class="link"> Privacy Policy</a>
+                    <input type="checkbox" id="consent" required> I agree to the <a href="terms" class="link"> Terms of Service</a>
                 </label>
                 <?php if (isset($errors['consent'])): ?>
                     <span class="form-error"><?php echo htmlspecialchars($errors['consent']); ?></span>
@@ -98,7 +98,7 @@
 
             <div class="additional-links">
                 <p><a href="#" class="link">Forgot your password?</a></p>
-                <p>already have an account? <a href="login.php" class="link">Log in</a></p>
+                <p>already have an account? <a href="login" class="link">Log in</a></p>
             </div>
 
         </div>
