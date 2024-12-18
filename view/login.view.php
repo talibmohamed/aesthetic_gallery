@@ -16,7 +16,7 @@
 
     <div class="main-container">
         <div class="form-container">
-            <h2 class="form-title">Log in</h2>
+            <h2 class="form-title">Log In</h2>
             <form method="POST" class="login-form">
                 <label for="username_or_email" class="form-label">Username or Email</label>
                 <input type="text" id="username_or_email" name="username_or_email" class="form-input" placeholder="Enter your username or email" required>
@@ -24,9 +24,8 @@
                 <label for="password" class="form-label">Password</label>
                 <div class="password-container">
                     <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
-                    <!-- Icon to toggle password visibility -->
                     <button type="button" id="togglePassword" class="password-toggle-button">
-                        <i class="fas fa-eye"></i> <!-- Font Awesome eye icon -->
+                        <i class="fas fa-eye"></i> 
                     </button>
                 </div>
 
@@ -41,16 +40,15 @@
                     <a href="#" class="link">Forgot password?</a>
                 </div>
 
-                <button type="submit" class="form-button">Log in</button>
+                <button type="submit" class="form-button">Log In</button>
 
-                <!-- if success -->
                 <?php if (isset($success)): ?>
                     <span class="form-success"><?php echo htmlspecialchars($success); ?></span>
                 <?php endif; ?>
             </form>
 
             <div class="additional-links">
-                <p>Don't have an account? <a href="signup" class="link">Sign up</a></p>
+                <p>Don't have an account? <a href="signup" class="link">Sign Up</a></p>
             </div>
         </div>
     </div>
@@ -60,9 +58,9 @@
     <script>
         const passwordField = document.getElementById('password');
         const togglePasswordButton = document.getElementById('togglePassword');
-        const passwordIcon = togglePasswordButton.querySelector('i'); 
+        const passwordIcon = togglePasswordButton.querySelector('i');
 
-        togglePasswordButton.addEventListener('click', function () {
+        togglePasswordButton.addEventListener('click', function() {
             const type = passwordField.type === 'password' ? 'text' : 'password';
             passwordField.type = type;
             if (type === 'password') {
