@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <!-- Lien vers le fichier CSS -->
-    </head>
-<body>
-    <h2>Customer Login</h2>
+    <title>Login</title>
+    <link rel="stylesheet" href="/aesthetic_gallery/view/css/login.css">
+</head>
+<body class="body">
+    <div class="login-container">
+        <h1 class="login-title">Login</h1>
+        <form class="login-form">
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-input" placeholder="Enter your email">
+            </div>
 
-    <form>
-        <!-- Email -->
-        <label for="email">Email address or user name:</label><br>
-        <input type="text" id="email" name="email" placeholder="Enter your email"><br>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-input" placeholder="Enter your password">
+            </div>
 
-        <!-- Password -->
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" placeholder="Enter your password"><br>
+            <div class="form-options">
+                <label class="checkbox-label">
+                    <input type="checkbox" class="form-checkbox"> Remember me
+                </label>
+                <a href="#" class="link">Forgot password?</a>
+            </div>
 
-        <!-- Button -->
-        <button type="submit">Log in</button>
-    </form>
-
-    <!-- Links -->
-    <p><a href="#">Forgot your password?</a></p>
-    <p>Don't have an account? <a href="#">Sign up</a></p>
-    <p>Are you a gallery artist? <a href="#">Log in here</a></p>
+            <button type="submit" class="login-button">Log in</button>
+        </form>
+        <p class="signup-text">
+            Don't have an account? <a href="#" class="link">Sign up</a>
+        </p>
+    </div>
 </body>
 </html>
