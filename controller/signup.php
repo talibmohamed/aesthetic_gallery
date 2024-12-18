@@ -109,14 +109,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 require_once 'view/signup.view.php';
 ?>
-
-<!-- Display error messages -->
-<?php if (!empty($errors)): ?>
-    <div style="color: red;">
-        <ul>
-            <?php foreach ($errors as $error): ?>
-                <li><?php echo htmlspecialchars($error); ?></li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-<?php endif; ?>

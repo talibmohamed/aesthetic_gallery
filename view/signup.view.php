@@ -92,9 +92,7 @@
                 <?php endif; ?>
 
                 <!-- is error general -->
-                <?php if (isset($error)): ?>
-                    <span class="form-error"><?php echo htmlspecialchars($error); ?></span>
-                <?php endif; ?>
+
 
             </form>
 

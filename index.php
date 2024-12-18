@@ -14,6 +14,7 @@ $routes = [
     '/login' => 'controller/login.php',
     //admin
     '/dashboard' => 'controller/admin/admindashboard.php',
+    '/terms' => 'controller/cgu.php',
 ];
 
 // Route the request
