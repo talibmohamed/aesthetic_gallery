@@ -25,8 +25,8 @@
                     </button>
                 </div>
                 <div class="auth-buttons">
-                    <a href="#" class="sign-in">Sign In</a>
-                    <a href="#" class="register">Register</a>
+                    <a href="login" class="sign-in">login</a>
+                    <a href="signup" class="register">Register</a>
                 </div>
             </div>
             <div class="left-lower">
