@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/aesthetic_gallery/view/css/login.css">
+
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -19,7 +22,13 @@
                 <input type="text" id="username_or_email" name="username_or_email" class="form-input" placeholder="Enter your username or email" required>
 
                 <label for="password" class="form-label">Password</label>
-                <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
+                    <!-- Icon to toggle password visibility -->
+                    <button type="button" id="togglePassword" class="password-toggle-button">
+                        <i class="fas fa-eye"></i> <!-- Font Awesome eye icon -->
+                    </button>
+                </div>
 
                 <?php if (isset($errors['login'])): ?>
                     <span class="form-error"><?php echo htmlspecialchars($errors['login']); ?></span>
@@ -47,6 +56,24 @@
     </div>
 
     <?php require_once 'partial/footer.php'; ?>
+
+    <script>
+        const passwordField = document.getElementById('password');
+        const togglePasswordButton = document.getElementById('togglePassword');
+        const passwordIcon = togglePasswordButton.querySelector('i'); 
+
+        togglePasswordButton.addEventListener('click', function () {
+            const type = passwordField.type === 'password' ? 'text' : 'password';
+            passwordField.type = type;
+            if (type === 'password') {
+                passwordIcon.classList.remove('fa-eye-slash');
+                passwordIcon.classList.add('fa-eye');
+            } else {
+                passwordIcon.classList.remove('fa-eye');
+                passwordIcon.classList.add('fa-eye-slash');
+            }
+        });
+    </script>
 
 </body>
 
