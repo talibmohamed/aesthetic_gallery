@@ -33,11 +33,13 @@ body {
 }
 
 .form-title {
-    font-family: KoPub Batang, serif;
+    font-family: Poppins, serif;
+    font-size: 3em;
+    color : #423E31;
     text-align: center;
 }
 
-.form-label {
+.form-label .additional-links {
     font-family: Poppins, sans-serif;
     font-size: 0.8em;
     color: #666666;
