@@ -13,7 +13,7 @@
     <?php require_once 'partial/header.php'; ?>
     <div class="main-container">
         <div class="form-container">
-            <h2 class="form-title">Create customer account</h2>
+            <h2 class="form-title">Create Your Account</h2>
             <form method="POST" class="signup-form" id="signup-form">
                 <label for="pseudo" class="form-label">Username</label>
                 <input type="text" id="pseudo" name="pseudo" class="form-input" placeholder="Your username" required>
@@ -98,7 +98,7 @@
 
             <div class="additional-links">
                 <p><a href="#" class="link">Forgot your password?</a></p>
-                <p>already have an account? <a href="login" class="link">Log in</a></p>
+                <p>Already have an account? <a href="login.php" class="link">Log in</a></p>
             </div>
 
         </div>

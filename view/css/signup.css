@@ -5,6 +5,9 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap');
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #FFF9F6;
@@ -22,7 +25,7 @@ body {
     justify-content: center;
     align-items: flex-start; 
     height: 100%; 
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 
 .form-container {
@@ -35,7 +38,9 @@ body {
 }
 
 .form-title {
-    font-family: KoPub Batang, serif;
+    font-family: Poppins, serif;
+    font-size: 3em;
+    color : #423E31;
     text-align: center;
 }
 

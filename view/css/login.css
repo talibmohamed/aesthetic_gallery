@@ -1,102 +1,143 @@
-/* Body */
-.body {
-    background-color: #fefaf7;
+@font-face {
+    font-family: 'KoPub Batang';
+    src: url('/aesthetic_gallery/view/fonts/kopub-batang/KoPubBatang-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
     font-family: Arial, sans-serif;
-    color: #5f4637;
+    background-color: #FFF9F6;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Container */
-.login-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 350px;
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.form-container {
+    background-color: #FFF9F6;
+    padding: 20px;
+    width: 500px;
+    border: 0;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.form-title {
+    font-family: Poppins, serif;
+    font-size: 3em;
+    color : #423E31;
     text-align: center;
 }
 
-.login-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #5f4637;
-}
-
-/* Form */
-.login-form {
-    text-align: left;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-label {
+.form-label .additional-links {
+    font-family: Poppins, sans-serif;
+    font-size: 0.8em;
+    color: #666666;
     display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #5f4637;
+    margin-top: 10px;
 }
 
 .form-input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #FFF9F6;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
 }
 
-/* Options */
 .form-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    font-size: 12px;
+    margin-top: 10px;
 }
 
 .checkbox-label {
-    display: flex;
-    align-items: center;
+    font-size: 0.9em;
 }
 
-.form-checkbox {
-    margin-right: 5px;
-}
-
-/* Links */
 .link {
-    color: #5f4637;
     text-decoration: none;
+    color: #5C6BC0;
+    font-size: 0.9em;
 }
 
-.link:hover {
-    text-decoration: underline;
-}
-
-/* Button */
-.login-button {
+.form-button {
+    font-family: Poppins, sans-serif;
+    padding: 15px;
+    background-color: #c3bfbd;
+    color: white;
     width: 100%;
-    padding: 10px;
-    background-color: #e0ddd8;
+    border-radius: 27px;
     border: none;
-    border-radius: 4px;
-    color: #5f4637;
-    font-size: 16px;
+    font-size: 1em;
     cursor: pointer;
+    margin-top: 20px;
 }
 
-.login-button:hover {
-    background-color: #d6d2cd;
+.form-button:hover {
+    background-color: #423E31;
+    transition: background-color 0.5s;
 }
 
-/* Signup text */
-.signup-text {
-    font-size: 12px;
+.form-error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
+.form-success {
+    color: green;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
+.additional-links {
+    text-align: center;
     margin-top: 15px;
+}
+
+.signup-text {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-error,
+.form-success {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-toggle-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666666;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.password-toggle-button:focus {
+    outline: none;
 }
