@@ -15,6 +15,7 @@ $routes = [
     //admin
     '/dashboard' => 'controller/admin/admindashboard.php',
     '/terms' => 'controller/cgu.php',
+    '/faq' => 'controller/faq.php',
 ];
 
 // Route the request

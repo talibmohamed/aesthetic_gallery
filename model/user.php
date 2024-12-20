@@ -65,4 +65,23 @@ class User
         $availability = !$this->pseudoExists($pseudo);
         return $availability;
     }
+
+        // Check if a user exists by email or pseudo (used for login)
+        public function getUserByEmailOrPseudo($usernameOrEmail)
+        {
+            if (filter_var($usernameOrEmail, FILTER_VALIDATE_EMAIL)) {
+                // It's an email, check in the database
+                $sql = "SELECT * FROM user WHERE email = :email";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindParam(':email', $usernameOrEmail);
+            } else {
+                // It's a username (pseudo), check in the database
+                $sql = "SELECT * FROM user WHERE pseudo = :pseudo";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindParam(':pseudo', $usernameOrEmail);
+            }
+    
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
 }

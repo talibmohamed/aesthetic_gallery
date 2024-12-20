@@ -5,13 +5,16 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap');
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #FFF9F6;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Ensures the header stays on top and the form is below it */
+    flex-direction: column; 
     min-height: 100vh;
 }
 
@@ -20,9 +23,9 @@ body {
 .main-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align content to the top */
-    height: 100%; /* Take full height */
-    overflow-y: auto; /* Allow the page to scroll */
+    align-items: flex-start; 
+    height: 100%; 
+    overflow-y: auto;
 }
 
 .form-container {
@@ -30,12 +33,14 @@ body {
     padding: 20px;
     width: 500px;
     border: 0;
-    margin-top: 20px; /* This adds spacing between the header and the form */
-    overflow: hidden; /* Prevent internal scrolling */
+    margin-top: 20px; 
+    overflow: hidden; 
 }
 
 .form-title {
-    font-family: KoPub Batang, serif;
+    font-family: Poppins, serif;
+    font-size: 3em;
+    color : #423E31;
     text-align: center;
 }
 
@@ -49,7 +54,7 @@ body {
 
 .form-input, 
 .form-select {
-    width: 100%; /* Fixed width for inputs */
+    width: 100%; 
     padding: 12px;
     margin: 10px 0;
     background-color: #FFF9F6;
