@@ -1,0 +1,136 @@
+:root {
+    --primary-color: #423E31;
+    --secondary-color: #5A4A39;
+    --background-color: #F2ECE8;
+    --search-bg-color: #FFF9F6;
+    --border-color: #d3cbb8;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+/* .main-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+} */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    /* padding: 50px 20px; */
+    margin-bottom: 30px;
+}
+
+.hero-content {
+    position: relative;
+
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.hero-title, .hero-subtitle {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    position: relative;
+}
+.hero-title.fade-in, .hero-subtitle.fade-in {
+    opacity: 1;
+}
+.hero-title.fade-out, .hero-subtitle.fade-out {
+    opacity: 0;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-image-container {
+    width: 50%;
+    text-align: center;
+}
+
+.hero-image {
+    max-width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+
+
+
+.featured-artworks, .about, .cta {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.artwork-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.artwork-card {
+    background-color: var(--search-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+.artwork-image {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.artwork-title {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.about-text, .cta-text {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
