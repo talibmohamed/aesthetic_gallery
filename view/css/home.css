@@ -120,6 +120,10 @@ body {
     width: 400px;
 }
 
+.artwork-card:hover {
+    transform: scale(1.01);
+}
+
 .artwork-title {
     font-size: 1.5rem;
     margin-top: 10px;
@@ -179,10 +183,11 @@ body {
     text-decoration: underline;
     text-decoration-thickness: 0.8px;
     text-underline-offset: 15px;
+    scale: 1.02;
 }
   
 .collection-link-desc {
     margin-top: 20px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #555;
 }
