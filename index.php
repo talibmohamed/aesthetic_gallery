@@ -8,6 +8,7 @@ $uri = str_replace($basePath, '', parse_url($_SERVER['REQUEST_URI'])['path']);
 // Define the routes
 $routes = [
     '/' => 'controller/home.php',
+    '/home' => 'controller/home.php',
     '/about' => 'controller/about.php',
     '/contact' => 'controller/contact.php',
     '/signup' => 'controller/signup.php',

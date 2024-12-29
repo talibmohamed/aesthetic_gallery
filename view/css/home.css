@@ -1,0 +1,301 @@
+:root {
+    --primary-color: #423E31;
+    --secondary-color: #5A4A39;
+    --background-color: #F2ECE8;
+    --background-color-light: #FFF9F6;
+    --search-bg-color: #FFF9F6;
+    --border-color: #d3cbb8;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.hero-content {
+    position: relative;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.hero-title, .hero-subtitle {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    position: relative;
+}
+.hero-title.fade-in, .hero-subtitle.fade-in {
+    opacity: 1;
+}
+.hero-title.fade-out, .hero-subtitle.fade-out {
+    opacity: 0;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-image-container {
+    width: 50%;
+    text-align: center;
+}
+
+.hero-image {
+    max-width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.featured-artworks {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: "Source Code Pro", serif;
+    background-color: var(--background-color-light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.featured-artworks {
+    background-color: var(--background-color-light);
+}
+    
+.artwork-gallery {
+    display: flex;
+    gap: 1px;
+    justify-content: center;
+}
+
+.artwork-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.artwork-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.artwork-card {
+    background-color: var(--search-bg-color);
+    border-radius: 8px;
+    text-align: left;
+    width: 400px;
+}
+
+.artwork-card:hover {
+    transform: scale(1.01);
+}
+
+.artwork-title {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.artwork-artist {
+    font-size: 1rem;
+    margin-top: 0px;
+}
+
+.artwork-desc {
+    font-size: 16px;
+    font-family: General Sans, sans-serif;
+    font-weight: 400;
+    margin-top: 12px;
+    padding-right: 20px;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.about-text, .cta-text {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.collection-links {
+    background-color: var(--background-color);
+    padding: 100px 50px;
+    text-align: center;
+    font-family: "Source Code Pro", serif;
+    color: var(--primary-color);
+}
+
+.collection-link-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    font-size: 84px !important;
+}
+
+.collection-link-container a {
+    font-size: 4rem;
+    font-weight: normal;
+    color: #333;
+    text-decoration: none;
+}
+
+.collection-link-container a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.8px;
+    text-underline-offset: 15px;
+    scale: 1.02;
+}
+  
+.collection-link-desc {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #555;
+}
+.carousel-section {
+    background-color: var(--background-color-light);
+    padding: 50px 0;
+}
+
+.carousel {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.text-content {
+    max-width: 50%;
+}
+
+.carousel-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: "Times New Roman", serif;
+}
+
+.text-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    max-width: 70%;
+    font-family: "Arial", sans-serif;
+}
+
+.text-content button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.text-content button:hover {
+    background-color: #444;
+    width: 50%;
+}
+
+.image-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-pagination {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-pagination .page {
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.carousel-pagination .prev,
+.carousel-pagination .next {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.carousel-pagination .page {
+    cursor: pointer;
+    color: #555;
+    padding: 5px 10px;
+    font-weight: normal;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.carousel-pagination .page:hover {
+    transform: scale(2); /* Scale up to 120% on hover */
+}
+
+.carousel-pagination .page.active {
+    border-radius: 50%;
+    font-weight: bold;
+    transform: scale(1.2); /* Keep active page scaled */
+}
