@@ -191,3 +191,112 @@ body {
     font-size: 0.8rem;
     color: #555;
 }
+.carousel-section {
+    background-color: var(--background-color-light);
+    padding: 50px 0;
+}
+
+.carousel {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.text-content {
+    max-width: 50%;
+}
+
+.carousel-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.text-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: "Times New Roman", serif;
+}
+
+.text-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    max-width: 70%;
+    font-family: "Arial", sans-serif;
+}
+
+.text-content button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.text-content button:hover {
+    background-color: #444;
+    width: 50%;
+}
+
+.image-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-pagination {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-pagination .page {
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.carousel-pagination .prev,
+.carousel-pagination .next {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.carousel-pagination .page {
+    cursor: pointer;
+    color: #555;
+    padding: 5px 10px;
+    font-weight: normal;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.carousel-pagination .page:hover {
+    transform: scale(2); /* Scale up to 120% on hover */
+}
+
+.carousel-pagination .page.active {
+    border-radius: 50%;
+    font-weight: bold;
+    transform: scale(1.2); /* Keep active page scaled */
+}

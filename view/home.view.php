@@ -86,6 +86,66 @@
             </div>
         </section>
 
+        <!-- Carousel -->
+        <section class="carousel-section">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <!-- Page 1 -->
+                    <div class="carousel-item active">
+                        <div class="carousel-content">
+                            <div class="text-content">
+                                <h1>The perfect husband</h1>
+                                <p>Looking for a 40th anniversary gift for the New Yorker who has everything, John won the award for best husband with a gift of art.</p>
+                                <button>Browse Gift Collection</button>
+                            </div>
+                            <div class="image-content">
+                                <img src="/aesthetic_gallery/view/images/page1-image.webp" alt="Client home">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 2 -->
+                    <div class="carousel-item">
+                        <div class="carousel-content">
+                            <div class="text-content">
+                                <h1>A Fresh Start</h1>
+                                <p>After a challenging time, Sarah moved to Arizona to start anew. She filled her home with pieces of art that inspired hope and joy.</p>
+                                <button>Discover Inspirational Art</button>
+                            </div>
+                            <div class="image-content">
+                                <img src="/aesthetic_gallery/view/images/page2-image.webp" alt="Client home">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 3 -->
+                    <div class="carousel-item">
+                        <div class="carousel-content">
+                            <div class="text-content">
+                                <h1>The art lover</h1>
+                                <p>Art transformed Jane's home into a sanctuary. She handpicked pieces from emerging artists that captured her unique story.</p>
+                                <button>Explore Art Pieces</button>
+                            </div>
+                            <div class="image-content">
+                                <img src="/aesthetic_gallery/view/images/page3-image.webp" alt="Client home">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="carousel-pagination" id="pagination">
+                    <span class="prev" onclick="prevSlide()">←</span>
+                    <span class="page" onclick="goToSlide(0)">1</span>
+                    <span class="page" onclick="goToSlide(1)">2</span>
+                    <span class="page" onclick="goToSlide(2)">3</span>
+                    <span class="next" onclick="nextSlide()">→</span>
+                </div>
+
+            </div>
+        </section>
+
+
     </div>
 
     <!-- Include the footer -->
@@ -94,5 +154,6 @@
 
 
 <script src="/aesthetic_gallery/view/js/hero-content.js"></script>
+<script src="/aesthetic_gallery/view/js/carousel.js"></script>
 
 </html>
