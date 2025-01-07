@@ -18,6 +18,8 @@ $routes = [
     '/terms' => 'controller/cgu.php',
     '/faq' => 'controller/faq.php',
     '/article' => 'controller/article.php',
+    '/profile' => 'controller/profile.php',
+    '/logout' => 'controller/logout.php',
 ];
 
 // Route the request

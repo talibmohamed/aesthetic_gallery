@@ -1,3 +1,9 @@
+
+<?php
+// session management
+session_start();
+?>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +30,21 @@
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="auth-buttons">
-                    <a href="login" class="sign-in">login</a>
-                    <a href="signup" class="register">Register</a>
-                </div>
+                <!-- if am connected remove login sighn in and add card profile -->
+                 <?php 
+                 if (isset($_SESSION['id_user'])) {
+                     echo '<div class="auth-buttons">
+                     <a href="profile" class="sign-in">Profile</a>
+                     <a href="logout" class="register">Logout</a>
+                    </div>';
+                    } else {
+                        echo '<div class="auth-buttons">
+                        <a href="login" class="sign-in">login</a>
+                        <a href="signup" class="register">Register</a>
+                    </div>';
+                    }
+                    ?>
+
             </div>
             <div class="left-lower">
                 <ul class="nav-horizontal">
