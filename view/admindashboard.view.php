@@ -27,40 +27,35 @@
             <p>Welcome to the Dashboard! Here you can see an overview of the system.</p>
         </div>
     </div>
+
     <script>
         const contentArea = document.getElementById('content-area');
         const sectionTitle = document.getElementById('section-title');
 
-        // Define content for each section
-        const content = {
-            dashboard: `
-            <?php require_once './dashboard_partials/overview.php'; ?> 
-            `,
-            users: `
-                <h2>Manage Users</h2>
-                <p>Here you can view, edit, and delete users from the system.</p>
-            `,
-            reports: `
-                <h2>Reports</h2>
-                <p>Access detailed reports and analytics about the system's performance.</p>
-            `,
-            settings: `
-                <h2>Settings</h2>
-                <p>Manage system settings, preferences, and configurations here.</p>
-            `
-        };
-
-        // Handle navigation click
         document.querySelectorAll('.sidebar ul li a').forEach(link => {
             link.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent default link behavior
+                event.preventDefault();
 
-                // Get the section name from the data attribute
+                // Get the section name
                 const section = event.target.getAttribute('data-section');
 
-                // Update the content area and title
+                // Update the title
                 sectionTitle.textContent = section.charAt(0).toUpperCase() + section.slice(1);
-                contentArea.innerHTML = content[section];
+
+                // Load content dynamically
+                fetch(`/aesthetic_gallery/controller/${section}.php`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        contentArea.innerHTML = data;
+                    })
+                    .catch(error => {
+                        contentArea.innerHTML = `<p>Error loading content: ${error.message}</p>`;
+                    });
             });
         });
     </script>

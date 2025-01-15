@@ -20,6 +20,7 @@ $routes = [
     '/article' => 'controller/article.php',
     '/profile' => 'controller/profile.php',
     '/logout' => 'controller/logout.php',
+    '/admin' => 'controller/admin/admindashboard.php',
 ];
 
 // Route the request
