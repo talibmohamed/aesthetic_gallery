@@ -18,6 +18,7 @@ $routes = [
     '/terms' => 'controller/cgu.php',
     '/faq' => 'controller/faq.php',
     '/article' => 'controller/article.php',
+    '/forgotpassword' => controller/forgotpassword.php
 ];
 
 // Route the request
