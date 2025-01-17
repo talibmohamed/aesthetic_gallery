@@ -84,4 +84,19 @@ class User
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getallusers()
+    {
+        $sql = "SELECT * FROM user";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    public function deleteUser($userId) {
+        $sql = "DELETE FROM user WHERE Id_user = :Id_user";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':Id_user', $userId);
+        return $stmt->execute();
+    }
 }

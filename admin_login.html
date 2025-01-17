@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3ebe5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 200px;
+            font-size: 30px;
+            font-family: 'Lora', serif;
+        }
+        p {
+            text-align: center;
+            font-size: 15px;
+        }
+        label {
+            display: block; 
+            margin-bottom: 5px; 
+            font-family: 'Merriweather', serif;
+        }
+        input {
+            text-align: center;
+            width: 450px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f3ebe5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 450px;
+            height: 50px;
+            padding: 10px;
+            background-color: #a1a09e;
+            font-size: 15px;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <form action="admin_login.php" method="POST">
+            <label for="username">Email address</label>
+            <input type="text" id="username" name="username" required>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <p>By continuing, you agree to the <a href="logout.php">Terms of us</a> and <a href="logout.php">Privacy Policy</a>.</p>
+
+            <button type="submit">Log in</button>
+
+            <p><a href="logout.php">Forget your password</a></p>
+        </form>
+    </div>
+</body>
+</html>

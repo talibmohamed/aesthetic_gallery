@@ -43,7 +43,7 @@
                 sectionTitle.textContent = section.charAt(0).toUpperCase() + section.slice(1);
 
                 // Load content dynamically
-                fetch(`/aesthetic_gallery/controller/${section}.php`)
+                fetch(`/aesthetic_gallery/controller/admin/${section}.php`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok');
@@ -58,6 +58,41 @@
                     });
             });
         });
+
+        async function deleteUser(userId) {
+            if (confirm('Are you sure you want to delete this user?')) {
+                try {
+                    const response = await fetch('/aesthetic_gallery/controller/admin/users.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            Id_user: userId
+                        })
+                    });
+
+                    const responseText = await response.text(); // Get the response text
+                    console.log(responseText); // Log the response text for debugging
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const result = JSON.parse(responseText); // Parse the response text as JSON
+
+                    if (result.success) {
+                        document.querySelector(`tr[data-user-id="${userId}"]`).remove();
+                        document.getElementById('feedbackMessage').innerText = 'User deleted successfully.';
+                    } else {
+                        document.getElementById('feedbackMessage').innerText = 'Failed to delete user.';
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    document.getElementById('feedbackMessage').innerText = 'An error occurred while deleting the user.';
+                }
+            }
+        }
     </script>
 </body>
 
