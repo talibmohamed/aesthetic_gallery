@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'KoPub Batang';
+    src: url('/aesthetic_gallery/view/fonts/kopub-batang/KoPubBatang-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+    font-family: 'KoPub Batang', serif;
+    background-color: #FFF9F6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #423E31;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.form-container {
+    /* background-color: #FFFFFF; */
+    padding: 30px;
+    width: 500px;
+    /* border-radius: 15px; */
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+    margin-top: 20px;
+}
+
+.form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #423E31;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    margin: 20px 0;
+}
+
+.profile-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 5px;
+}
+
+.form-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1em;
+    color: #666666;
+    font-weight: 700;
+}
+
+.form-input {
+    font-family: 'KoPub Batang', serif;
+    font-size: 1em;
+    color: #423E31;
+    font-weight: 400;
+    text-align: right;
+}
+
+.form-button {
+    font-family: 'Playfair Display', serif;
+    padding: 15px;
+    background-color: #C3BFBD;
+    color: white;
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form-button:hover {
+    background-color: #423E31;
+}
+
+a.form-button {
+    text-decoration: none;
+}
+
+.additional-links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.link {
+    text-decoration: none;
+    color: #5C6BC0;
+    font-size: 0.9em;
+}
+
+
+
+
+
