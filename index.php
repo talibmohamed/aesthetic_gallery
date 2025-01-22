@@ -22,7 +22,7 @@ $routes = [
     '/logout' => 'controller/logout.php',
     '/admin' => 'controller/admin/admindashboard.php',
     '/admin/faq' => 'controller/admin/adminfaq.php',
-    '/admin/cgu' => 'controller/admin/cgu.php',
+    '/admin/cgu' => 'controller/admin/admincgu.php',
 ];
 
 // Route the request
