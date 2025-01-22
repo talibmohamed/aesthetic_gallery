@@ -53,7 +53,9 @@
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ Id_user: userId })
+                        body: JSON.stringify({
+                            Id_user: userId
+                        })
                     });
                     const result = await response.json();
                     if (result.success) {

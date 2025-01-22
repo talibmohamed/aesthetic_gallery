@@ -21,6 +21,8 @@ $routes = [
     '/profile' => 'controller/profile.php',
     '/logout' => 'controller/logout.php',
     '/admin' => 'controller/admin/admindashboard.php',
+    '/admin/faq' => 'controller/admin/adminfaq.php',
+    'admin/update_faq' => 'controller/admin/update_faq.php',
 ];
 
 // Route the request

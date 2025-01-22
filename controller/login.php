@@ -1,7 +1,7 @@
 <?php
 
 // Start the session
-session_start();
+// session_start();
 
 // Include necessary files
 require_once 'model/db.php';
