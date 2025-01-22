@@ -1,4 +1,24 @@
 <?php
+// Informations de connexion
+$host = '127.0.0.1'; // ou localhost
+$dbname = 'aesthetic_gallery'; // Remplacez par le nom de votre base de données
+$username = 'root'; // Par défaut dans Laragon
+$password = ''; // Mot de passe par défaut vide dans Laragon
+
+try {
+    // Connexion à la base de données avec PDO
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+
+    // Configuration des options PDO (facultatif mais recommandé)
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+    echo "Connexion réussie à la base de données !";
+} catch (PDOException $e) {
+    // Gestion des erreurs
+    die("Erreur de connexion : " . $e->getMessage());
+}
+
 $artistes = [
     [
         'photo' => 'artist-photo1.jpg',
@@ -31,4 +51,5 @@ foreach ($artistes as $artiste) {
     echo "Description: " . $artiste['description'] . "\n\n";
 }
 ?>
+
 
