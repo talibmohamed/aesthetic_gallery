@@ -1,3 +1,14 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// In the controller
+$isLoggedIn = isset($_SESSION['id_user']);
+$userData = $isLoggedIn ? $_SESSION['id_user'] : null;
+
+?>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +35,18 @@
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="auth-buttons">
-                    <a href="login" class="sign-in">login</a>
-                    <a href="signup" class="register">Register</a>
-                </div>
+                <!-- if am connected remove login sighn in and add card profile -->
+                <?php if ($isLoggedIn): ?>
+                    <div class="auth-buttons">
+                        <a href="profile" class="sign-in">Profile</a>
+                        <a href="logout" class="register">Logout</a>
+                    </div>
+                <?php else: ?>
+                    <div class="auth-buttons">
+                        <a href="login" class="sign-in">Login</a>
+                        <a href="signup" class="register">Register</a>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="left-lower">
                 <ul class="nav-horizontal">
@@ -41,4 +60,3 @@
         </nav>
     </div>
 </header>
-

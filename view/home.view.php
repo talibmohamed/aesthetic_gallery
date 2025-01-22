@@ -1,4 +1,5 @@
 <!-- Include the header -->
+<!-- session -->
 <?php require_once 'partial/header.php'; ?>
 
 <!DOCTYPE html>
