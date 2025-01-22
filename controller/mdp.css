@@ -1,0 +1,75 @@
+/* Définir les styles globaux */
+body {
+    font-family: Arial, sans-serif; /* Police mise à jour */
+    background-color: #FFF9F6; /* Couleur de fond modifiée */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black; /* Texte en noir */
+}
+
+/* Conteneur principal */
+.container {
+    background: #ffffff;
+    padding: 30px 50px; /* Plus d'espace autour du contenu */
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center; /* Centre le texte */
+}
+
+/* Titre */
+h1 {
+    font-size: 26px;
+    margin-bottom: 30px;
+    line-height: 1.5; /* Espace entre les lignes */
+    color: black; /* Titre en noir */
+}
+
+/* Groupes d'input */
+.input-group {
+    margin-bottom: 20px; /* Plus d'espace entre les champs */
+}
+
+label {
+    font-size: 14px;
+    color: black; /* Labels en noir */
+    margin-bottom: 10px; /* Espace plus grand sous les labels */
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 12px; /* Plus d'espace dans les champs */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Bords arrondis pour les champs */
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Bouton */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF; /* Couleur principale */
+    color: white;
+    border: none;
+    border-radius: 30px; /* Bords arrondis */
+    font-size: 16px;
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
