@@ -23,7 +23,9 @@ $routes = [
     '/admin' => 'controller/admin/admindashboard.php',
     '/admin/faq' => 'controller/admin/adminfaq.php',
     '/admin/cgu' => 'controller/admin/admincgu.php',
-    '/forgotpassword' => 'controller/forgotpassword.php'
+    '/forgotpassword' => 'controller/forgotpassword.php',
+    // upload art page 
+    '/upload' => 'controller/upload_art.php',
 ];
 
 // Route the request

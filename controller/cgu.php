@@ -1,14 +1,14 @@
 <?php
 require_once 'model/db.php';
-require_once 'model/CGUModel.php';
+require_once 'model/cgu.php';
 
 $database = new Database();
 
 $db = $database->getConnection();
 
-$cguModel = new CGUModel($db);
+$cguModel = new CGU($db);
 
-$cgu = $cguModel->getAllCGU();
+$cgu = $cguModel->getAll();
 
 require_once 'view/cgu.view.php';
 ?>
