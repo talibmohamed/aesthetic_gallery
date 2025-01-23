@@ -25,7 +25,7 @@ $routes = [
     '/admin/cgu' => 'controller/admin/admincgu.php',
     '/forgotpassword' => 'controller/forgotpassword.php',
     // upload art page 
-    '/upload' => 'controller/upload_art.php',
+    '/upload' => 'controller/upload.php',
 ];
 
 // Route the request
