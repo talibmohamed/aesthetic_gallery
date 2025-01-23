@@ -26,7 +26,7 @@ $userData = $isLoggedIn ? $_SESSION['id_user'] : null;
                         <i class="fa fa-bars" aria-hidden="true"></i>
                     </div>
                     <div class="web-site-name" id="name">
-                        <a href="#">Aesthetic Gallery</a>
+                        <a href="home">Aesthetic Gallery</a>
                     </div>
                 </div>
                 <div class="search">
@@ -35,12 +35,20 @@ $userData = $isLoggedIn ? $_SESSION['id_user'] : null;
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
                 </div>
-                <!-- if am connected remove login sighn in and add card profile -->
+                <!-- if am connected remove login sighn in and add card profile if logged in and admin display a link to the dashboard-->
                 <?php if ($isLoggedIn): ?>
-                    <div class="auth-buttons">
-                        <a href="profile" class="sign-in">Profile</a>
-                        <a href="logout" class="register">Logout</a>
-                    </div>
+                    <?php if ($_SESSION['user_type'] === 'admin'): ?>
+                        <div class="auth-buttons">
+                            <a href="admin/cgu" class="sign-in">Dashboard</a>
+                            <a href="profile" class="register">Profile</a>
+                            <a href="logout" class="register">Logout</a>
+                        </div>
+                    <?php else: ?>
+                        <div class="auth-buttons">
+                            <a href="profile" class="sign-in">Profile</a>
+                            <a href="logout" class="register">Logout</a>
+                        </div>
+                    <?php endif; ?>
                 <?php else: ?>
                     <div class="auth-buttons">
                         <a href="login" class="sign-in">Login</a>
@@ -51,8 +59,8 @@ $userData = $isLoggedIn ? $_SESSION['id_user'] : null;
             <div class="left-lower">
                 <ul class="nav-horizontal">
                     <li><a href="home">Home</a></li>
-                    <li><a href="#">Artists</a></li>
-                    <li><a href="#">Artworks</a></li>
+                    <li><a href="artwork">Artists</a></li>
+                    <li><a href="artwork">Artworks</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="about">About</a></li>
                 </ul>

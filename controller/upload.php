@@ -2,6 +2,13 @@
 // Initialize variables and database connection
 session_start();
 
+// Check if user artist $_SESSION['artist'] = true;
+if ($_SESSION['artist'] !== true) {
+    header('Location: /aesthetic_gallery');
+    exit;
+}
+
+
 $title = "Add Artwork";
 require_once 'model/db.php';
 require_once 'model/Art.php';

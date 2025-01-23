@@ -13,6 +13,14 @@ $db = $database->getConnection();
 // Initialize error messages for specific fields
 $errors = [];
 
+if (isset($_SESSION['id_user'])) {
+
+    echo "logout before registering for a new account. You will be redirected to the home page in a few seconds.";
+    header("refresh:3;url=/aesthetic_gallery");
+    // header("Location: /aesthetic_gallery");
+    exit;
+}
+
 // Collect and sanitize form data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = htmlspecialchars(trim($_POST['nom']));
@@ -108,4 +116,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 require_once 'view/signup.view.php';
-?>
