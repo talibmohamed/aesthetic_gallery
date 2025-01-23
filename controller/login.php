@@ -45,6 +45,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $userModel->getUserByEmailOrPseudo($usernameOrEmail);
 
         if ($user && password_verify($password, $user['password'])) {
+
+            if ($user['user_type'] == 'admin') {
+                $_SESSION['admin'] = true;
+            } else {
+                $_SESSION['admin'] = false;
+            }
+
+            // check if the user is an artist
+            if ($user['user_type'] == 'artist') {
+                $_SESSION['artist'] = true;
+            } else {
+                $_SESSION['artist'] = false;
+            }
+
             // Store user information in session
             $_SESSION['id_user'] = $user['Id_user'];
             $_SESSION['user_type'] = $user['user_type'];

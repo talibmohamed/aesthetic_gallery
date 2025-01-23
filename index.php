@@ -29,6 +29,7 @@ $routes = [
     '/forgotpassword' => 'controller/forgotpassword.php',
     // upload art page
     '/upload' => 'controller/upload.php',
+    '/artwork' => 'controller/artwork.php',
 ];
 
 // Route the request

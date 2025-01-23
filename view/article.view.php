@@ -250,13 +250,10 @@
                         <p><?= htmlspecialchars($artistInfo['Email']); ?></p>
                     </div>
                 </div>
-
                 <div class="buy-now-btn">
-                    <a href="#">Buy Now</a>
+                    <a href="mailto:<?= htmlspecialchars($artistInfo['Email']); ?>">Contact the artist</a>
                 </div>
-                <div class="back-btn">
-                    <a href="index.php">Back to Listings</a>
-                </div>
+
             </div>
         </div>
 

@@ -4,11 +4,12 @@ $page = "faq";
 
 session_start();
 
-// if (!isset($_SESSION['admin'])) {
-//     header('Location: admin_login.html');
-//     exit();
-// }
-
+// test if its an admin $_SESSION['admin'] = true;
+// session_start();
+if ($_SESSION['admin'] !== true) {
+    header('Location: /aesthetic_gallery');
+    exit;
+}
 
 require_once 'model/db.php';
 require_once 'model/faq.php';

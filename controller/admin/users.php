@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-// Ensure only admins can access this page
-// if (!isset($_SESSION['id_user']) || $_SESSION['user_type'] !== 'admin') {
-//     http_response_code(403);
-//     echo json_encode(['success' => false, 'message' => 'Unauthorized access.']);
-//     exit;
-// }
+// test if its an admin $_SESSION['admin'] = true;
+session_start();
+if (!isset($_SESSION['admin'])) {
+    echo json_encode(['success' => false, 'message' => 'Unauthorized']);
+    exit;
+}
 
 // Include database and user model
 require_once '../../model/db.php';
@@ -36,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Id_user'])) {
     } else {
         echo json_encode(['success' => false, 'message' => 'Invalid request.']);
     }
-
 }
 
 // Fetch all users from the database

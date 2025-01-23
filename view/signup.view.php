@@ -15,6 +15,12 @@
         <div class="form-container">
             <h2 class="form-title">Create Your Account</h2>
             <form method="POST" class="signup-form" id="signup-form">
+
+                <!-- if success -->
+                <?php if (isset($success)): ?>
+                    <span class="form-success"><?php echo htmlspecialchars($success); ?></span>
+                <?php endif; ?>
+                
                 <label for="pseudo" class="form-label">Username</label>
                 <input type="text" id="pseudo" name="pseudo" class="form-input" placeholder="Your username" required>
                 <span id="availability-status" class="availability-status"></span>
@@ -84,14 +90,19 @@
 
                 <span id="formErrors" class="form-error"></span>
 
+                <!-- capcha -->
+                <!-- capcha -->
+                <h3>Solve Captcha</h3>
+                <center><img src="/aesthetic_gallery/view/captcha.php" /></center>
+                <br />
+                <br />
+                <div class="form-group">
+                    <input type="text" class="form-control" name="captcha" required="required" />
+                </div>
+
                 <button type="submit" class="form-button">Sign Up</button>
 
-                <!-- if success -->
-                <?php if (isset($success)): ?>
-                    <span class="form-success"><?php echo htmlspecialchars($success); ?></span>
-                <?php endif; ?>
 
-                <!-- is error general -->
 
 
             </form>
