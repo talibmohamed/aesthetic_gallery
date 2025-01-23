@@ -12,7 +12,6 @@ $errors = [];
 $imagePath = '';
 $success = '';  // Initialize success message variable
 
-// Collect and sanitize form data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = htmlspecialchars(trim($_POST['nom']));
     $description = htmlspecialchars(trim($_POST['description']));
@@ -24,13 +23,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Handle file upload
     if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
         $imageTmpPath = $_FILES['image']['tmp_name'];
-        $imageName = $_FILES['image']['name'];
+        $originalImageName = $_FILES['image']['name'];
+        $fileExtension = pathinfo($originalImageName, PATHINFO_EXTENSION);
+
+        // Generate a unique file name
+        $uniqueImageName = uniqid('art_') . '.' . $fileExtension;
+
         $targetDir = __DIR__ . '/../uploads/';
-        $imagePath = 'uploads/' . basename($imageName); 
+        $imagePath = 'uploads/' . $uniqueImageName;
+
+        // Ensure the uploads directory exists
         if (!file_exists($targetDir)) {
-            mkdir($targetDir, 0777, true); 
+            mkdir($targetDir, 0777, true);
         }
-        if (move_uploaded_file($imageTmpPath, $targetDir . basename($imageName))) {
+
+        // Move the uploaded file to the target directory
+        if (move_uploaded_file($imageTmpPath, $targetDir . $uniqueImageName)) {
             $success = "File uploaded successfully.";
         } else {
             $errors['image'] = "Error uploading the file.";
@@ -50,7 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($mode_vente)) {
         $errors['mode_vente'] = "Sale mode is required.";
     }
-
 
     // If no errors, proceed to insert the artwork
     if (empty($errors)) {
