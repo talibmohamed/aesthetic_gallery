@@ -1,6 +1,8 @@
 <?php
 $title = "Sign Up";
 
+session_start();
+
 // Include necessary files for database and user controller
 require_once 'model/db.php';
 require_once 'model/user.php';
@@ -32,11 +34,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $consent = isset($_POST['consent']) ? 1 : 0; // consent is a checkbox that returns true or false
     $tel = htmlspecialchars(trim($_POST['tel']));
     $user_type = htmlspecialchars(trim($_POST['user_type']));
+    $captcha = htmlspecialchars(trim($_POST['captcha']));
 
     // Test if the email is already registered
     $user = new User($db);
     if ($user->emailExists($email)) {
         $errors['email'] = "Email is already registered.";
+    }
+
+    // check kapcha
+    if ($captcha !== $_SESSION['captcha']) {
+        $errors['captcha'] = "Invalid captcha.";
     }
 
     // Validate inputs
@@ -108,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $user->register($data);
 
         if ($result) {
-            $success = 'Registration successful. You can now <a href="login.php">log in</a>.';
+            $success = 'Registration successful.';
         } else {
             $errors['general'] = 'Registration failed. Please try again.';
         }
