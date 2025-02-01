@@ -35,11 +35,6 @@ Aesthetic Gallery is a web application built to showcase and manage a collection
    ```
 
 
-## Usage
-
-- Visit `http://localhost:8000` in your browser to access the application.
-- Register for a new account or log in with existing credentials.
-
 ## Contributing
 
 If you would like to contribute to the project, please fork the repository and submit a pull request. Contributions are always welcome!
